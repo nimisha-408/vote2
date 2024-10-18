@@ -60,7 +60,7 @@ spec:
 
         stage('Docker Build and Push with BuildKit') {
             when {
-                branch "main"
+                branch "master"
             }
             steps {
                 container('buildkit') {
@@ -90,7 +90,7 @@ spec:
                           buildctl build --frontend dockerfile.v0 \
                           --local context=. \
                           --local dockerfile=. \
-                          --output type=image,name=docker.io/xxxxxx/vote:${commitHash},push=true
+                          --output type=image,name=docker.io/nimisha408/vote:${commitHash},push=true
                         """
                     }
                 }
